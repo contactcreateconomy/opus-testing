@@ -12,7 +12,10 @@
       "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd CLAUDE.md and move MCP servers to user scope\n\n- Add CLAUDE.md with project guidance for Claude Code\n- Remove memory, sequential-thinking, shadcn from project MCP config\n  \\(moved to user-level for global availability\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git push)",
       "Bash(git checkout -b monorepo-convex main)",
-      "Bash(git add .claude/settings.local.json)"
+      "Bash(git add .claude/settings.local.json)",
+      "Bash(git add .gitignore)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd root .gitignore for monorepo\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push -u origin monorepo-convex)"
     ]
   },
   "enableAllProjectMcpServers": true,
