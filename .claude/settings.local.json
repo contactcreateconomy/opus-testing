@@ -2,7 +2,17 @@
   "permissions": {
     "allow": [
       "mcp__plugin_context7_context7__resolve-library-id",
-      "mcp__plugin_context7_context7__query-docs"
+      "mcp__plugin_context7_context7__query-docs",
+      "mcp__plugin_github_github__get_me",
+      "Bash(claude mcp list)",
+      "Bash(claude mcp add --scope user --transport stdio memory -- npx -y @modelcontextprotocol/server-memory)",
+      "Bash(claude mcp add --scope user --transport stdio sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking)",
+      "Bash(claude mcp add --scope user --transport stdio shadcn -- npx -y @anthropic/mcp-server-shadcn)",
+      "Bash(git add CLAUDE.md .claude/mcp.json)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd CLAUDE.md and move MCP servers to user scope\n\n- Add CLAUDE.md with project guidance for Claude Code\n- Remove memory, sequential-thinking, shadcn from project MCP config\n  \\(moved to user-level for global availability\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)",
+      "Bash(git checkout -b monorepo-convex main)",
+      "Bash(git add .claude/settings.local.json)"
     ]
   },
   "enableAllProjectMcpServers": true,
