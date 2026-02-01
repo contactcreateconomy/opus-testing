@@ -1,0 +1,15 @@
+{
+  "extends": "../config/typescript/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@repo/ui": ["../ui/src"],
+      "@repo/ui/*": ["../ui/src/*"],
+      "@repo/convex": ["../convex/src"],
+      "@repo/convex/*": ["../convex/src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
+}

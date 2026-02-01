@@ -1,0 +1,22 @@
+{
+  "name": "createconomy-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "dev:forum": "turbo run dev --filter=@apps/forum",
+    "dev:marketplace": "turbo run dev --filter=@apps/marketplace",
+    "dev:admin": "turbo run dev --filter=@apps/admin",
+    "dev:seller": "turbo run dev --filter=@apps/seller"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "turbo": "^2.4.4"
+  }
+}
