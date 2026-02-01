@@ -69,14 +69,44 @@ npx shadcn@latest add <component-name>
 ## MCP Server Configuration
 
 ### Project-Level (`.claude/mcp.json`)
-- `filesystem` - File system access scoped to this project directory
-- `convex` - Convex backend integration
+
+#### filesystem
+File system access scoped to `E:\Github\opus-testing`
+- **Tools**: `mcp__filesystem__read_text_file`, `mcp__filesystem__write_file`, `mcp__filesystem__list_directory`, `mcp__filesystem__search_files`, `mcp__filesystem__edit_file`, `mcp__filesystem__directory_tree`
+- **Use when**: Reading/writing files, exploring directory structure, searching for files by pattern
+
+#### convex
+Convex backend integration (requires `CONVEX_DEPLOY_KEY` or URL configuration)
+- **Status**: Pending configuration
+- **Use when**: Interacting with Convex database, running queries/mutations
+
+#### shadcn
+shadcn/ui component assistance
+- **Tools**: `mcp__shadcn__get_project_registries`, `mcp__shadcn__search_items_in_registries`, `mcp__shadcn__view_items_in_registries`, `mcp__shadcn__get_item_examples_from_registries`, `mcp__shadcn__get_add_command_for_items`, `mcp__shadcn__get_audit_checklist`
+- **Use when**: Adding new UI components, finding component examples, checking component documentation
+- **Example**: Search for button variants, get demo code, generate add commands
 
 ### User-Level (available globally)
-- `memory` - Persistent memory across sessions
-- `sequential-thinking` - Step-by-step reasoning assistance
-- `shadcn` - shadcn/ui component assistance
+
+#### memory
+Persistent knowledge graph across sessions
+- **Tools**: `mcp__memory__create_entities`, `mcp__memory__create_relations`, `mcp__memory__search_nodes`, `mcp__memory__read_graph`
+- **Use when**: Storing user preferences, project context, or information to remember across sessions
+
+#### sequential-thinking
+Step-by-step reasoning for complex problems
+- **Tools**: `mcp__sequential-thinking__sequentialthinking`
+- **Use when**: Breaking down complex problems, multi-step analysis, hypothesis generation and verification
 
 ### Plugin-Provided (global)
-- `github` - GitHub API integration
-- `context7` - Documentation lookup for libraries
+
+#### github
+GitHub API integration
+- **Tools**: `mcp__plugin_github_github__*` (issues, PRs, commits, branches, search, etc.)
+- **Use when**: Creating issues/PRs, searching code, managing repositories, code reviews
+
+#### context7
+Up-to-date documentation lookup for libraries
+- **Tools**: `mcp__plugin_context7_context7__resolve-library-id`, `mcp__plugin_context7_context7__query-docs`
+- **Use when**: Fetching current documentation for any library (Next.js, React, Tailwind, etc.)
+- **Workflow**: First resolve library ID, then query docs with specific questions
